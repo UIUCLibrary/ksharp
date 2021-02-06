@@ -27,7 +27,7 @@
 
 .item-showcase .resource.item {
     vertical-align: top;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 
     img {
         margin-right: .5rem;
@@ -36,10 +36,6 @@
 
     &:only-child img {
         margin: 0 auto;
-    }
-
-    &:nth-child(n+3) {
-        margin-top:3rem
     }
 
     &:not(:only-child) {
