@@ -46,6 +46,9 @@
         width: 50%;
         clear: none;
         padding: 0 .5rem;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
     }
 
     &:not(:only-child) h3 {
