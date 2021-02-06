@@ -38,6 +38,10 @@
         margin: 0 auto;
     }
 
+    &:nth-child(n+3) {
+        margin-top:3rem
+    }
+
     &:not(:only-child) {
         width: 50%;
         clear: none;
