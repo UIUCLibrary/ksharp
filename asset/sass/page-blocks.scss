@@ -1,8 +1,6 @@
 @import "base";
 .item-showcase {
     margin: 1rem 0;
-    border-top: 1px solid $border-gray;
-    border-bottom: 1px solid $border-gray;
     padding: calc(1rem - 1px) 0 0;
     overflow: hidden;
     text-align: center;
@@ -20,7 +18,7 @@
     }
 
     p {
-        font-size: 14px;
+        font-size: 1.4rem;
     }
     & > *:last-child {
         margin-bottom: 0;
@@ -29,7 +27,7 @@
 
 .item-showcase .resource.item {
     vertical-align: top;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 
     img {
         margin-right: .5rem;
@@ -41,20 +39,23 @@
     }
 
     &:not(:only-child) {
-        width: 25%;
+        width: 50%;
         clear: none;
         padding: 0 .5rem;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
     }
 
     &:not(:only-child) h3 {
         clear: left;
-        font-size: 1rem;
-        line-height: 1.5rem;
+        font-size: 1.5rem;
+        line-height: normal;
         margin: .5rem 0 0;
     }
 
     &:not(:only-child) img {
-        max-height: 7rem;
+        max-height: 30rem;
         width: auto;
         float: none;
         margin-right: 0;
