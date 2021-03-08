@@ -38,7 +38,7 @@ $itemMedia = $item->media();
     <?php endforeach; ?>
     <?php endif; ?>
 </div>
-<?php if (!$embedMedia && $itemMedia): ?>
+<?php if (!$embedMedia && $itemMedia && !$this->themeSetting('media_list')): ?>
 <div class="property">
     <h4><?php echo $translate('Item Media'); ?></h4>
     <ul class="media-list">
