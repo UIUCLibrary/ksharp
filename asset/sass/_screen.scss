@@ -654,7 +654,7 @@ body.resource #content > h2:first-of-type + h3 {
 
 .property h4 {
     margin-bottom: 0;
-    font-size: .75 * $base-font-size;
+    font-size:2rem;
 }
 
 .resource-link img {
@@ -936,4 +936,9 @@ p, .main-content-container li {
 
 .metadata-header {
     text-align:center;
+}
+
+.value {
+    font-size:1.5rem;
+    line-height:normal;
 }
