@@ -396,8 +396,8 @@ header nav {
     width:50%
 }
 
-.item .container-lg {
-    max-width: none;
+.item > .container-lg {
+    max-width: 1800px;
 }
 
 .universal-viewer {

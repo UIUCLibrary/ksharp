@@ -9,6 +9,7 @@ $itemMedia = $item->media();
     <?php echo $this->pageTitle($item->displayTitle(), 2); ?>
     <?php $this->trigger('view.show.before'); ?>
 </div>
+<div class="container-lg">
 <div class="col-md-9 offset-md-1-5">
     <div class="main-content-container">
 <?php if ($embedMedia && $itemMedia): ?>
@@ -65,4 +66,5 @@ $subjectValues = $item->displaySubjectValues($page, 25, $property);
 
 <?php $this->trigger('view.show.after'); ?>
     </div>
+</div>
 </div>
