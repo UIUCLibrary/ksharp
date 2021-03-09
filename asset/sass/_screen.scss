@@ -655,6 +655,7 @@ body.resource #content > h2:first-of-type + h3 {
 .property h4 {
     margin-bottom: 0;
     font-size:2rem;
+    border-bottom: 1px solid #dee2e6;
 }
 
 .resource-link img {
@@ -941,4 +942,8 @@ p, .main-content-container li {
 .value {
     font-size:1.5rem;
     line-height:normal;
+}
+
+.values {
+    padding-top:.5rem;
 }
