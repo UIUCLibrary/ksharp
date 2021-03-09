@@ -6,10 +6,11 @@ $embedMedia = $this->siteSetting('item_media_embed', false);
 $itemMedia = $item->media();
 ?>
 <div class="col-md-12">
+    <?php echo $this->pageTitle($item->displayTitle(), 2); ?>
+    <?php $this->trigger('view.show.before'); ?>
+</div>
+<div class="col-md-9 offset-md-1-5">
     <div class="main-content-container">
-<?php echo $this->pageTitle($item->displayTitle(), 2); ?>
-<h3><?php echo $translate('Item'); ?></h3>
-<?php $this->trigger('view.show.before'); ?>
 <?php if ($embedMedia && $itemMedia): ?>
     <div class="media-embeds">
     <?php foreach ($itemMedia as $media):
@@ -18,6 +19,7 @@ $itemMedia = $item->media();
     ?>
     </div>
 <?php endif; ?>
+<h2 class="metadata-header">Descriptive Information</h2>
 <div class="property">
     <h4><?php echo $translate('Permalink'); ?></h4>
     <div class="values">
@@ -28,7 +30,6 @@ $itemMedia = $item->media();
         </div>
     </div>
 </div>
-<h3 class="metadata-header">Descriptive Information</h3>
 <?php echo $item->displayValues(); ?>
 <div class="property">
     <?php $itemSets = $item->itemSets(); ?>
