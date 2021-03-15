@@ -649,12 +649,13 @@ body.resource #content > h2:first-of-type + h3 {
 }
 
 .property {
-    margin-bottom: $spacing-l;
+    margin-bottom: 2rem;
 }
 
 .property h4 {
     margin-bottom: 0;
-    font-size: .75 * $base-font-size;
+    font-size:2rem;
+    border-bottom: 1px solid #dee2e6;
 }
 
 .resource-link img {
@@ -929,6 +930,22 @@ p, .main-content-container li {
     margin-right:0;
 }
 
+.media-list {
+    list-style: none;
+    padding:0;
+}
+
+.metadata-header {
+    text-align:center;
+}
+
+.value {
+    font-size:1.5rem;
+    line-height:normal;
+}
+
+.values {
+    padding-top:.5rem;
 .pagination-image-parent {
     height:100px;
     overflow:hidden;

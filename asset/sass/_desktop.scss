@@ -94,7 +94,7 @@ header nav ul.navigation {
         background-color: #fff;
         list-style: none;
         padding: 0;
-        z-index: 1;
+        z-index: 11;
         display:none;
     }
 
@@ -395,6 +395,10 @@ header nav {
 .center.file img, .center.file video {
     width:50%
 }
+
+.universal-viewer {
+    margin-bottom: 3rem;
+  
 .center .caption {
     width:50%;
     margin-left:auto;

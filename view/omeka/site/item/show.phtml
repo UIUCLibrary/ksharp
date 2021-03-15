@@ -5,11 +5,12 @@ $this->htmlElement('body')->appendAttribute('class', 'item resource show');
 $embedMedia = $this->siteSetting('item_media_embed', false);
 $itemMedia = $item->media();
 ?>
+<div class="col-md-12">
+    <?php echo $this->pageTitle($item->displayTitle(), 2); ?>
+    <?php $this->trigger('view.show.before'); ?>
+</div>
 <div class="col-md-9 offset-md-1-5">
     <div class="main-content-container">
-<?php echo $this->pageTitle($item->displayTitle(), 2); ?>
-<h3><?php echo $translate('Item'); ?></h3>
-<?php $this->trigger('view.show.before'); ?>
 <?php if ($embedMedia && $itemMedia): ?>
     <div class="media-embeds">
     <?php foreach ($itemMedia as $media):
@@ -18,6 +19,15 @@ $itemMedia = $item->media();
     ?>
     </div>
 <?php endif; ?>
+<h2 class="metadata-header">Descriptive Information</h2>
+<div class="property">
+    <h4><?php echo $translate('Permalink'); ?></h4>
+    <div class="values">
+        <div class="value">
+            <?php echo $item->siteUrl($siteSlug = null, $canonical = true); ?>
+        </div>
+    </div>
+</div>
 <?php echo $item->displayValues(); ?>
 <div class="property">
     <?php $itemSets = $item->itemSets(); ?>
@@ -28,11 +38,14 @@ $itemMedia = $item->media();
     <?php endforeach; ?>
     <?php endif; ?>
 </div>
-<?php if (!$embedMedia && $itemMedia): ?>
-<div class="media-list">
-    <?php foreach ($itemMedia as $media): ?>
-        <?php echo $media->linkPretty(); ?>
-    <?php endforeach; ?>
+<?php if (!$embedMedia && $itemMedia && !$this->themeSetting('media_list')): ?>
+<div class="property">
+    <h4><?php echo $translate('Item Media'); ?></h4>
+    <ul class="media-list">
+        <?php foreach ($itemMedia as $media): ?>
+            <li><?php echo $media->linkPretty(); ?></li>
+        <?php endforeach; ?>
+    </ul>
 </div>
 <?php endif; ?>
 
