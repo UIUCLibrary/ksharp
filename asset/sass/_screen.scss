@@ -946,4 +946,14 @@ p, .main-content-container li {
 
 .values {
     padding-top:.5rem;
+.pagination-image-parent {
+    height:100px;
+    overflow:hidden;
+}
+
+.pagination-image {
+    object-fit: cover;
+    object-position: 50% 10%;
+    height: 100%;
+    width:100px;
 }
