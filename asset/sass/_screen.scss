@@ -928,3 +928,15 @@ p, .main-content-container li {
     margin-left:0;
     margin-right:0;
 }
+
+.pagination-image-parent {
+    height:100px;
+    overflow:hidden;
+}
+
+.pagination-image {
+    object-fit: cover;
+    object-position: 50% 10%;
+    height: 100%;
+    width:100px;
+}
