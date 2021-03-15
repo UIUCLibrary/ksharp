@@ -56,12 +56,11 @@ if ($nextPage){
                 <div class="mr-auto xxMainLibxx-nav-button">
                     <div class="card nav-card" >
                     <div class="row">
-                        <div class="col-auto">
+                        <div class="col-auto pagination-image-parent">
                             <a  href="<?php echo $prevPage->siteUrl() ?>" class="stretched-link">
                             <img src="<?php echo $prevPageThumb['url'] ?>"
-                                 class="img-fluid .img-thumbnail"
+                                 class="img-fluid pagination-thumbnail"
                                  alt="<?php echo $prevPageThumb['alt'] ?>"
-                                 style="max-width: 100px"
                             >
                             </a>
                         </div>
@@ -81,12 +80,11 @@ if ($nextPage){
                 <div class="ml-auto xxMainLibxx-nav-button">
                     <div class="card nav-card" >
                         <div class="row">
-                            <div class="col-auto">
+                            <div class="col-auto pagination-image-parent">
                                 <a  href="<?php echo $nextPage->siteUrl() ?>" class="stretched-link">
                                     <img src="<?php echo $nextPageThumb['url'] ?>"
-                                         class="img-fluid .img-thumbnail"
+                                         class="img-fluid pagination-image"
                                          alt="<?php echo $nextPageThumb['alt'] ?>"
-                                         style="max-width: 100px"
                                     >
                                 </a>
                             </div>
