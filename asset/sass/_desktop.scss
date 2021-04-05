@@ -410,4 +410,11 @@ header nav {
     background-size: contain;
     min-height:60vh
 }
+
+@media (max-width:1000px) {
+    .banner {
+        background-size: contain;
+        min-height:40vh
+    }
+}
 /* @end */
