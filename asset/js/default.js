@@ -53,7 +53,12 @@ var Omeka = {};
             childToggle.attr('aria-label', expandString);
           }
         });
-        
+
+        // Move the universal viewer to designated location in php
+        if ($('#uv-1').length) {
+            $("#viewer").append($("#uv-1"));
+        }
+
         // Maintain iframe aspect ratios
         $(window).on('load resize', framerateCallback(fixIframeAspect));
         fixIframeAspect();
