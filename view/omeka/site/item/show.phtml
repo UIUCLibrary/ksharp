@@ -8,7 +8,9 @@ $itemMedia = $item->media();
 <div class="col-md-12">
     <?php echo $this->pageTitle($item->displayTitle(), 2); ?>
     <?php $this->trigger('view.show.before'); ?>
-    <div id="viewer"></div>
+    <?php if (!$this->themeSetting('uv_item_show')): ?>
+        <div id="viewer"></div>
+    <?php endif; ?>
 </div>
 <div class="col-md-9 offset-md-1-5">
     <div class="main-content-container">

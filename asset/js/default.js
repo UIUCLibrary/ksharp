@@ -56,7 +56,12 @@ var Omeka = {};
 
         // Move the universal viewer to designated location in php
         if ($('#uv-1').length) {
-            $("#viewer").append($("#uv-1"));
+            if ($('#viewer').length) {
+                $("#viewer").append($("#uv-1"));
+            } else {
+                $('#uv-1').hide();
+            }
+
         }
 
         // Maintain iframe aspect ratios
