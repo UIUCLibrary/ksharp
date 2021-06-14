@@ -1,3 +1,8 @@
+<div class="col-md-12">
+<?php if ($this->themeSetting('uv_item_browse') == 'top'): ?>
+    <div id="viewer-top"></div>
+<?php endif; ?>
+</div>
 <div class="col-md-9 offset-md-1-5">
     <div class="main-content-container">
 <?php
@@ -70,7 +75,12 @@ foreach ($items as $item):
 <?php endforeach; ?>
 </ul>
 <?php echo ($itemSetShow) ? '</div>' : ''; ?>
-<?php $this->trigger('view.browse.after'); ?>
 <?php echo $this->pagination(); ?>
     </div>
+</div>
+<div class="col-md-12">
+<?php if ($this->themeSetting('uv_item_browse') == 'bottom'): ?>
+    <div id="viewer-bottom"></div>
+<?php endif; ?>
+<?php $this->trigger('view.browse.after'); ?>
 </div>
