@@ -63,9 +63,9 @@ $subjectValues = $item->displaySubjectValues($page, 25, $property);
     <?php echo $subjectValues; ?>
 </div>
 <?php endif; ?>
+    </div>
+</div>
 <?php if ($this->themeSetting('uv_item_show') == 'bottom'): ?>
     <div id="viewer-bottom"></div>
 <?php endif; ?>
 <?php $this->trigger('view.show.after'); ?>
-    </div>
-</div>
