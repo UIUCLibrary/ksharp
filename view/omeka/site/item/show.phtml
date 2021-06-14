@@ -8,8 +8,8 @@ $itemMedia = $item->media();
 <div class="col-md-12">
     <?php echo $this->pageTitle($item->displayTitle(), 2); ?>
     <?php $this->trigger('view.show.before'); ?>
-    <?php if (!$this->themeSetting('uv_item_show')): ?>
-        <div id="viewer"></div>
+    <?php if ($this->themeSetting('uv_item_show') == 'top'): ?>
+        <div id="viewer-top"></div>
     <?php endif; ?>
 </div>
 <div class="col-md-9 offset-md-1-5">
@@ -63,7 +63,9 @@ $subjectValues = $item->displaySubjectValues($page, 25, $property);
     <?php echo $subjectValues; ?>
 </div>
 <?php endif; ?>
-
+<?php if ($this->themeSetting('uv_item_show') == 'bottom'): ?>
+    <div id="viewer-bottom"></div>
+<?php endif; ?>
 <?php $this->trigger('view.show.after'); ?>
     </div>
 </div>

@@ -56,9 +56,9 @@ var Omeka = {};
 
         // Move the universal viewer to designated location in php
         if ($('#uv-1').length) {
-            if ($('#viewer').length) {
-                $("#viewer").append($("#uv-1"));
-            } else {
+            if ($('#viewer-top').length) {
+                $("#viewer-top").append($("#uv-1"));
+            } else if ($('#viewer-bottom').length === 0) {
                 $('#uv-1').hide();
             }
 
