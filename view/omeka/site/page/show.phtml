@@ -4,8 +4,13 @@ $this->htmlElement('body')->appendAttribute('class', 'page');
 $this->pageTitle($page->title(), 2);
 $showPagePagination = $this->siteSetting('show_page_pagination', true);
 $default_thumb = $this->assetUrl('img/Placeholder.png');
-?>
 
+$homepageSlug = $site->homepage()->slug();
+$currentSlug = $page->slug();
+if ($currentSlug == $homepageSlug) {
+    $this->htmlElement('body')->appendAttribute('class', 'homepage');
+}
+?>
 <?php
 $nav = $site->publicNav();
 $container = $nav->getContainer();
