@@ -38,7 +38,9 @@ $child_pages = $activeRoot['pages'];
 <?php if (!$this->themeSetting('side_nav') && $activePage && count($child_pages) != 0): ?>
         <div class="col-md-3">
             <div class="table-of-contents-nav">
-                <h3>Exhibit Contents</h3>
+                <?php if ($this->themeSetting('side_nav_title')): ?>
+                    <h3><?php echo $this->themeSetting('side_nav_title');?></h3>
+                <?php endif; ?>
                 <?php printNav($activeRoot, $activePage['page']->toArray()); ?>
             </div>
         </div>
