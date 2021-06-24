@@ -44,7 +44,7 @@ $child_pages = $activeRoot['pages'];
         <div class="col-md-3">
             <div class="table-of-contents-nav">
                 <?php if ($this->themeSetting('side_nav_title')): ?>
-                    <h3><?php echo $this->themeSetting('side_nav_title');?></h3>
+                    <h3><?php echo $this->escapeHtml($this->themeSetting('side_nav_title'));?></h3>
                 <?php endif; ?>
                 <?php printNav($activeRoot, $activePage['page']->toArray()); ?>
             </div>
