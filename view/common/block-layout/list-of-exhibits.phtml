@@ -1,7 +1,12 @@
 <div class="clearfix"></div>
 
-<h2 class="toc-card-header">List of Exhibits</h2>
+<?php $heading = $this->heading; ?>
+<?php if ($heading) {
+    ?><h2 class="toc-card-header"><?php echo $heading ?></h2>
 
+<?php } else{
+    ?> <h2 class="toc-card-header">List of Exhibits</h2> <?php
+} ?>
 <?php
 
 $exhibits = $this->exhibits + $this->siblings;
