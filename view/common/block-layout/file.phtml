@@ -4,6 +4,11 @@
     <div class="item resource">
     <?php
     $item = $attachment->item();
+    try {
+        $item->displayTitle();
+    } catch (Exception $exception){
+        $item = false;
+    }
     if ($item):
     ?>
         <?php
