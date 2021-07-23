@@ -5,10 +5,12 @@ $this->pageTitle($page->title(), 2);
 $showPagePagination = $this->siteSetting('show_page_pagination', true);
 $default_thumb = $this->assetUrl('img/Placeholder.png');
 
-try {
+//if a home page has been set, give non-homepages a smaller header
+$currentSlug = $page->slug();
+if ($site->homepage()){
     $homepageSlug = $site->homepage()->slug();
-} catch (Exception $exception){
-
+} else {
+    $homepageSlug = $currentSlug;
 }
 $currentSlug = $page->slug();
 if ($currentSlug == $homepageSlug) {
