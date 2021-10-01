@@ -1,9 +1,12 @@
 <?php
 $summary = $showSummary ? $site->summary() : null;
 ?>
-<div class="site">
-    <?php echo $this->hyperlink($site->title(), $site->siteUrl(), ['class' => 'site-link']); ?>
-    <?php if ($summary): ?>
-    <p class="site-summary"><?php echo nl2br($this->escapeHtml($summary)); ?></p>
-    <?php endif; ?>
+
+
+<div class="col-md-6 ksharp-sites">
+    <div class="card toc-card">
+        <div class="card-body">
+            <p class="card-title"><a class="stretched-link" href="<?php echo  $site->siteUrl(); ?>"><?php echo $site->title(); ?></a></p>
+        </div>
+    </div>
 </div>
