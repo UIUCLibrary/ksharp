@@ -235,7 +235,10 @@
 
 .ksharp-sites{
     margin: .75rem;
-    a, p {
+    a.card-title, p.card-title {
+        font-size: 1.8rem;
+    }
+    a.card-text, p.card-text {
         font-size: 1.7rem;
     }
 }
