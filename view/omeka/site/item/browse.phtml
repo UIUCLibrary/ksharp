@@ -81,6 +81,8 @@ foreach ($items as $item):
 <div class="col-md-12">
 <?php if ($this->themeSetting('uv_item_browse') == 'bottom'): ?>
     <div id="viewer-bottom"></div>
+<?php elseif ($this->themeSetting('uv_item_browse') == 'off'): ?>
+    <div id="viewer-off"></div>
 <?php endif; ?>
 <?php $this->trigger('view.browse.after'); ?>
 </div>
