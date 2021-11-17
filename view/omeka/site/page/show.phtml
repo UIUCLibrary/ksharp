@@ -84,7 +84,7 @@ function getThumbnail($page, $default, $size){
                 foreach ($block->attachments() as $attachment):
                     if($attachment->media()){
                         $media = $attachment->media();
-                    } elseif ($attachment->item()->primaryMedia()){
+                    } elseif ($attachment->item() && $attachment->item()->primaryMedia()){
                         $media = $attachment->item()->primaryMedia();
                     }
                     if ($media){
