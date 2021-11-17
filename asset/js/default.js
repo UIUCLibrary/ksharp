@@ -55,10 +55,11 @@ var Omeka = {};
         });
 
         // Move the universal viewer to designated location in php
+        // Default behavior is to place UV at the bottom.
         if ($('#uv-1').length) {
             if ($('#viewer-top').length) {
                 $("#viewer-top").append($("#uv-1"));
-            } else if ($('#viewer-bottom').length === 0) {
+            } else if ($('#viewer-off').length) {
                 $('#uv-1').hide();
             }
 
