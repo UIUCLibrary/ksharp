@@ -980,3 +980,19 @@ p, .main-content-container li {
 #viewer-bottom {
     margin-top: 2rem;
 }
+
+blockquote {
+    margin: 1em 0;
+    font-size: 22px;
+    border-left: 4px solid #000;
+    padding-left: .75rem
+}
+
+blockquote.plain {
+    border-left: none;
+    padding-left:0
+}
+
+blockquote.regular-text {
+    font-size:1.8rem
+}
