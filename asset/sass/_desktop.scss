@@ -422,4 +422,20 @@ header nav {
         min-height:40vh
     }
 }
+
+blockquote {
+    margin: 1em 4rem;
+    font-size: 22px;
+    border-left: 4px solid #000;
+    padding-left: .75rem
+}
+
+blockquote.plain {
+    border-left: none;
+    padding-left:0
+}
+
+blockquote.regular-text {
+    font-size:1.8rem
+}
 /* @end */
