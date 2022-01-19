@@ -822,6 +822,7 @@ p, .main-content-container li {
     .card-title{
         font-size:2rem;
         color: $link;
+        line-height: normal;
     }
 }
 
@@ -909,6 +910,7 @@ p, .main-content-container li {
     /*! autoprefixer: ignore next */
     -webkit-box-orient: vertical;
     font-size: 1.75rem;
+    padding-bottom:.5rem;
 }
 
 .ksharp-nav-button {
