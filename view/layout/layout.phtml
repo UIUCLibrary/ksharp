@@ -49,6 +49,9 @@ $userBar = $this->userBar();
             .toc-card .card-title {
                 color: <?php echo $accentColor; ?>;
             }
+            ul.navigation li.parent:nth-child(n+<?php echo $this->themeSetting('nav_items'); ?>){
+                display:none;
+            }
             <?php endif; ?>
         </style>
     </head>
