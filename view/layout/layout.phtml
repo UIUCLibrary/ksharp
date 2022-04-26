@@ -35,24 +35,27 @@ $userBar = $this->userBar();
             a:link,
             a:visited {
                 color: <?php echo $accentColor; ?>
-            }
+            };
             
             a:active,
             a:hover {
                 color: <?php echo darken_color($accentColor, 20); ?>;
-            }
+            };
 
             .toc-card:hover a, .toc-card:hover .card-title {
                 color: <?php echo darken_color($accentColor, 20); ?>;
-            }
+            };
 
             .toc-card .card-title {
                 color: <?php echo $accentColor; ?>;
-            }
+            };
+            <?php endif; ?>
+
+            <?php if ($this->themeSetting('nav_items')): ?>
             ul.navigation > li:nth-child(n+<?php echo $this->themeSetting('nav_items') + 1; ?>){
                 display:none;
-            }
-            <?php endif; ?>
+            };
+            <?php endif ?>
         </style>
     </head>
 
