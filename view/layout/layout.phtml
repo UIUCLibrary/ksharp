@@ -29,86 +29,86 @@ $userBar = $this->userBar();
         <?php echo $this->headLink(); ?>
         <?php echo $this->headStyle(); ?>
         <?php echo $this->headScript(); ?>
-        
+
         <style>
             <?php if ($accentColor = $this->themeSetting('accent_color')): ?>
             a:link,
             a:visited {
                 color: <?php echo $accentColor; ?>
-            };
-            
+            }
+
             a:active,
             a:hover {
                 color: <?php echo darken_color($accentColor, 20); ?>;
-            };
+            }
 
             .toc-card:hover a, .toc-card:hover .card-title {
                 color: <?php echo darken_color($accentColor, 20); ?>;
-            };
+            }
 
             .toc-card .card-title {
                 color: <?php echo $accentColor; ?>;
-            };
+            }
             <?php endif; ?>
-
             <?php if ($this->themeSetting('nav_items')): ?>
             ul.navigation > li:nth-child(n+<?php echo $this->themeSetting('nav_items') + 1; ?>){
                 display:none;
-            };
-            <?php endif ?>
+            }
+            <?php endif;?>
         </style>
     </head>
 
-    <?php echo $this->htmlElement('body'); ?>
-        <?php echo $userBar; ?>
-        <header>
-                <?php if ($this->themeSetting('banner')): ?>
-                   <div class="col-sm-12 banner" style="background-image:linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('<?php echo $this->themeSettingAssetUrl('banner');?>')">
-                       <div id="search">
-                           <?php echo $this->partial('common/search-form'); ?>
-                       </div>
-                       <div class="site-title">
-                           <a href="<?php echo $site->url(); ?>" class="site-title"><h1><?php echo $escape($siteTitle); ?></h1></a>
-                       </div>
-                       <div class="banner-caption"><?php echo $this->themeSetting('banner_caption');?></div>
-                   </div>
-                <?php else: ?>
-                    <div class="col-sm-12 banner" style="background-image:linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('<?php echo $this->assetUrl('img/Default-header.jpg') ?>')">
-                        <div id="search">
-                            <?php echo $this->partial('common/search-form'); ?>
-                        </div>
-                        <div class="site-title">
-                            <a href="<?php echo $site->url(); ?>" class="site-title"><h1><?php echo $escape($siteTitle); ?></h1></a>
-                        </div>
-                        <div class="banner-caption">University of Illinois Main Library, courtesy of <a href="https://commons.wikimedia.org/wiki/File:Main_Library-University_of_Illinois_at_Urbana-Champaign_09.jpg">Killivalavan Solai, Wikimedia Commons</a></div>
-                    </div>
-                <?php endif; ?>
+<?php echo $this->htmlElement('body'); ?>
+<?php echo $userBar; ?>
+    <header>
+        <?php if ($this->themeSetting('banner')): ?>
+            <div class="col-sm-12 banner" style="background-image:linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('<?php echo $this->themeSettingAssetUrl('banner');?>')">
+                <div id="search">
+                    <?php echo $this->partial('common/search-form'); ?>
+                </div>
+                <div class="site-title">
+                    <a href="<?php echo $site->url(); ?>" class="site-title"><h1><?php echo $escape($siteTitle); ?></h1></a>
+                </div>
+                <div class="banner-caption"><?php echo $this->themeSetting('banner_caption');?></div>
+            </div>
+        <?php else: ?>
+            <div class="col-sm-12 banner" style="background-image:linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('<?php echo $this->assetUrl('img/Default-header.jpg') ?>')">
+                <div id="search">
+                    <?php echo $this->partial('common/search-form'); ?>
+                </div>
+                <div class="site-title">
+                    <a href="<?php echo $site->url(); ?>" class="site-title"><h1><?php echo $escape($siteTitle); ?></h1></a>
+                </div>
+                <div class="banner-caption">University of Illinois Main Library, courtesy of <a href="https://commons.wikimedia.org/wiki/File:Main_Library-University_of_Illinois_at_Urbana-Champaign_09.jpg">Killivalavan Solai, Wikimedia Commons</a></div>
+            </div>
+        <?php endif; ?>
 
-            <nav>
+        <nav>
             <?php
             echo $site->publicNav()->menu()->renderMenu(null, [
                 'maxDepth' => $this->themeSetting('nav_depth') - 1
             ]);
             ?>
-            </nav>
-        </header>
-        <div role="main" class="container-lg">
-            <?php echo $this->content; ?>
-        </div>
-        <footer>
-            <?php if ($footerContent = $this->themeSetting('footer')): ?>
-                <?php echo $footerContent; ?>
-            <?php endif; ?>
-        </footer>
+        </nav>
+    </header>
+    <div role="main" class="container-lg">
+        <?php echo $this->content; ?>
+    </div>
+    <footer>
+        <?php if ($footerContent = $this->themeSetting('footer')): ?>
+            <?php echo $footerContent; ?>
+        <?php endif; ?>
+    </footer>
     </body>
-</html>
+    </html>
 <?php
 
-function darken_color( $hex, $percent ) {
+function darken_color($hex, $percent)
+{
     preg_match('/^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i', $hex, $primary_colors);
     str_replace('%', '', $percent);
     $color = "#";
-    for($i = 1; $i <= 3; $i++) {
+    for ($i = 1; $i <= 3; $i++) {
         $primary_colors[$i] = hexdec($primary_colors[$i]);
         $primary_colors[$i] = round($primary_colors[$i] * (100-($percent*2))/100);
         $color .= str_pad(dechex($primary_colors[$i]), 2, '0', STR_PAD_LEFT);
