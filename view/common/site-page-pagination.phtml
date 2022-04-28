@@ -3,6 +3,8 @@ $translate = $this->plugin('translate');
 $prevText = $translate('Previous Section: ');
 $nextText = $translate('Next Section: ');
 $default_thumb = $this->assetUrl('img/Default_square.png');
+$escape = $this->plugin('escapeHtml');
+
 ?>
 
 <?php
@@ -60,7 +62,7 @@ if ($nextPage){
                             <a  href="<?php echo $prevPage->siteUrl() ?>" class="stretched-link">
                             <img src="<?php echo $prevPageThumb['url'] ?>"
                                  class="img-fluid pagination-image"
-                                 alt="<?php echo $prevPageThumb['alt'] ?>"
+                                 alt="<?php echo $escape($prevPageThumb['alt']) ?>"
                             >
                             </a>
                         </div>
@@ -84,7 +86,7 @@ if ($nextPage){
                                 <a  href="<?php echo $nextPage->siteUrl() ?>" class="stretched-link">
                                     <img src="<?php echo $nextPageThumb['url'] ?>"
                                          class="img-fluid pagination-image"
-                                         alt="<?php echo $nextPageThumb['alt'] ?>"
+                                         alt="<?php $escape($prevPageThumb['alt']) ?>"
                                     >
                                 </a>
                             </div>
