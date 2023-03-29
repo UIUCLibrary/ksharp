@@ -20,6 +20,7 @@ $this->headScript()->prependFile('https://stackpath.bootstrapcdn.com/bootstrap/4
 $this->jsTranslate();
 $this->trigger('view.layout');
 $userBar = $this->userBar();
+$container_size = $this->themeSetting('container_size')==='xlg' ? 'xlg': 'lg' ;
 ?>
 <?php echo $this->doctype(); ?>
 <?php echo $this->htmlElement('html'); ?>
@@ -91,7 +92,7 @@ $userBar = $this->userBar();
             ?>
         </nav>
     </header>
-    <div role="main" class="container-lg">
+    <div role="main" class="container-<?php echo $container_size ?>">
         <?php echo $this->content; ?>
     </div>
     <footer>
