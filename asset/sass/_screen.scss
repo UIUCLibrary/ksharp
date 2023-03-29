@@ -842,8 +842,12 @@ p, .main-content-container li {
 }
 
 .card-body {
-    background: #E8E9EB;
-    border: 1px solid rgba(0,0,0,.125);
+    background: $ku-limestone-1;
+    border: 1px solid rgba($ku-limestone-2,.125);
+}
+
+.card-body.fill-vertical {
+    min-height: 100%;
 }
 
 .toc-card-header {
