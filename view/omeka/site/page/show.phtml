@@ -4,6 +4,7 @@ $this->htmlElement('body')->appendAttribute('class', 'page');
 $this->pageTitle($page->title(), 2);
 $showPagePagination = $this->siteSetting('show_page_pagination', true);
 $default_thumb = $this->assetUrl('img/Placeholder.png');
+$escape = $this->plugin('escapeHtml');
 
 //if a home page has been set, give non-homepages a smaller header
 $currentSlug = $page->slug();
@@ -95,10 +96,9 @@ function getThumbnail($page, $default, $size){
                             $url = $media->thumbnailUrl($size);
                         }
 
-                        if (array_key_exists('o-module-alt-text:alt-text', $media->primaryMedia()->jsonSerialize())
-                            && $media->primaryMedia()->jsonSerialize()['o-module-alt-text:alt-text']
+                        if ($media->primaryMedia()->altTextResolved()
                         ) {
-                            $alt = $media->primaryMedia()->jsonSerialize()['o-module-alt-text:alt-text'];
+                            $alt = $media->primaryMedia()->altTextResolved();
                         } else {
                             $alt = 'Thumbnail preview for next page';
                         }
