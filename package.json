@@ -1,6 +1,6 @@
 {
   "name": "default",
-  "version": "1.5.1",
+  "version": "1.7.1",
   "description": "The default theme for Omeka S.",
   "main": "gulpfile.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "autoprefixer": "^9.2.1",
     "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.1.1",
+    "gulp-sass": "^5.0.0",
     "susy": "^2.2.12"
   },
   "browserslist": [
@@ -32,6 +32,6 @@
     "> 1% in US"
   ],
   "dependencies": {
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.6"
   }
 }
