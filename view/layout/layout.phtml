@@ -32,6 +32,11 @@ $container_size = $this->themeSetting('container_size')==='xlg' ? 'xlg': 'lg' ;
         <?php echo $this->headScript(); ?>
 
         <style>
+            <?php if ($this->themeSetting('nav_color')):?>
+            header nav {
+                background-color: <?php echo $this->themeSetting('nav_color') ?>;
+            }
+            <?php endif;?>
             <?php if ($accentColor = $this->themeSetting('accent_color')): ?>
             a:link,
             a:visited {
