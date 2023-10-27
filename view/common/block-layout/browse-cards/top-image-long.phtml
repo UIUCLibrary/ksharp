@@ -1,0 +1,45 @@
+<?php
+$headingTerm = $this->siteSetting('browse_heading_property_term');
+$bodyTerm = $this->siteSetting('browse_body_property_term');
+
+$filterLocale = (bool) $this->siteSetting('filter_locale_values');
+$lang = $this->lang();
+//
+
+$iter = 1; // use iter to determine whether the card is on the left or right
+foreach ($resources as $resource) : ?>
+    <?php
+    $thumbnail = $this->assetUrl('img/Placeholder.png');
+    if ($resource->primaryMedia()):
+        $thumbnail = $resource->primaryMedia()->thumbnailUrl('large');
+        $alt =  $resource->primaryMedia()->altText();
+    endif;
+    $heading = $headingTerm ? $resource->value($headingTerm, ['default' => $translate('[Untitled]')]) : $resource->displayTitle(null, ($filterLocale ? $lang : null));
+    $body = $bodyTerm ? $resource->value($bodyTerm) : $resource->displayDescription(null, ($filterLocale ? $lang : null));
+    ?>
+    <?php if ($iter % 2): // if card is on the left, make a new row?>
+        <div class="row toc-row">
+    <?php endif; ?>
+    <?php
+    ?>
+    <div class="col-md-6">
+        <div class="card toc-card">
+            <div class="panel-heading">
+                <img alt="<?php echo $alt ?>" class="card-img-top" src="<?php echo $thumbnail ?>" />
+            </div>
+            <div class="card-body">
+                <h6 class="card-title text-truncate"><a class="stretched-link" href=""><?php echo $heading ?></a></h6>
+                <p class="card-subtitle mb-3 text-muted">By so-and-so</p>
+                <p class="card-text ksharp-fade">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+    <?php if (($iter % 2) == 0): // if card is on the right, close row?>
+        </div>
+    <?php endif;
+    $iter++;
+endforeach;
+?>
+<?php if (($iter % 2) == 0): // if last card is on the left, close row?>
+    </div>
+<?php endif; ?>

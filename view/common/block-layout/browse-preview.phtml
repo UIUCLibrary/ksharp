@@ -1,0 +1,20 @@
+<?php
+$headingTerm = $this->siteSetting('browse_heading_property_term');
+$bodyTerm = $this->siteSetting('browse_body_property_term');
+
+$filterLocale = (bool) $this->siteSetting('filter_locale_values');
+$lang = $this->lang();
+//
+$template = 'common/block-layout/browse-cards/default.phtml';
+if (array_key_exists('special_template', $query)){
+    switch ($query['special_template']) {
+        case '1':
+            $template = 'common/block-layout/browse-cards/left-image-brief.phtml';
+            break;
+        case '3':
+            $template ='common/block-layout/browse-cards/top-image-long.phtml';
+            break;
+    }
+}
+echo $this->partial($template);
+

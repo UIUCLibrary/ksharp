@@ -23,14 +23,6 @@ $itemMedia = $item->media();
     </div>
 <?php endif; ?>
 <h2 class="metadata-header">Descriptive Information</h2>
-<div class="property">
-    <h4><?php echo $translate('Permalink'); ?></h4>
-    <div class="values">
-        <div class="value">
-            <?php echo $item->siteUrl($siteSlug = null, $canonical = true); ?>
-        </div>
-    </div>
-</div>
 <?php echo $item->displayValues(); ?>
 <div class="property">
     <?php $itemSets = $item->itemSets(); ?>

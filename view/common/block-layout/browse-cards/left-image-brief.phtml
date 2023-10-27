@@ -1,0 +1,38 @@
+<?php
+$headingTerm = $this->siteSetting('browse_heading_property_term');
+$bodyTerm = $this->siteSetting('browse_body_property_term');
+
+$filterLocale = (bool) $this->siteSetting('filter_locale_values');
+$lang = $this->lang();
+//
+
+$iter = 1; // use iter to determine whether the card is on the left or right
+foreach ($resources as $resource) : ?>
+    <?php
+    $thumbnail = $this->assetUrl('img/Placeholder.png');
+    if ($resource->primaryMedia()):
+        $thumbnail = $resource->primaryMedia()->thumbnailUrl('square');
+        $alt =  $resource->primaryMedia()->altText();
+    endif;
+    $heading = $headingTerm ? $resource->value($headingTerm, ['default' => $translate('[Untitled]')]) : $resource->displayTitle(null, ($filterLocale ? $lang : null));
+    $body = $bodyTerm ? $resource->value($bodyTerm) : $resource->displayDescription(null, ($filterLocale ? $lang : null));
+    ?>
+
+    <div class="card mb-5" style="max-width: 1540px;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img alt="<?php echo $alt ?>" class="card-img-top" src="<?php echo $thumbnail ?>"  />
+            </div>
+            <div class="col-md-8">
+                <div class="card-body fill-vertical">
+                    <h3 class="card-title text-truncate"><a class="stretched-link" href=""><?php echo $heading ?></a></h3>
+                    <p class="card-text"><?php echo $body ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php endforeach; ?>
+<?php if (($iter % 2) == 0): // if last card is on the left, close row?>
+    </div>
+<?php endif; ?>

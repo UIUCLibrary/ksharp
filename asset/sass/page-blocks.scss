@@ -242,3 +242,38 @@
         font-size: 1.7rem;
     }
 }
+
+.wide-40 {
+    max-width: 40%;
+}
+
+.wide-50 {
+    max-width: 50%;
+}
+
+.wide-60 {
+    max-width: 60%;
+}
+
+.ksharp-fade {
+    position: relative;
+    height: 4.4em; /* exactly three lines */
+    overflow: hidden
+}
+.ksharp-fade::after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1.2em;
+    background: linear-gradient(to bottom, rgba($ku-limestone-1, 0), rgba($ku-limestone-1, 1) 80%);
+}
+.pageTitle-block h2{
+
+    font-size: 5rem;
+    padding-bottom: 4rem;
+    font-style: italic;
+}
+
