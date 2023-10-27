@@ -170,6 +170,7 @@ header nav > ul > li > .parent-link > a {
 header nav > ul > li > .parent-link a:after {
     font-family: "Font Awesome 5 Free";
     content: "\f105";
+    font-weight: 900;
     display: inline-block;
     margin-left: $spacing-s;
     transition: transform .1s ease-in-out;
