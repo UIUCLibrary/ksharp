@@ -9,7 +9,11 @@ $escape = $this->plugin('escapeHtml');
 //if a home page has been set, give non-homepages a smaller header
 $currentSlug = $page->slug();
 if ($site->homepage()){
-    $homepageSlug = $site->homepage()->slug();
+    try {
+        $homepageSlug = $site->homepage()->slug();
+    }catch (Exception $exception) { //if the homepage is set to priviate, calling slug from the representation will throw a Doctrine not found error
+        $homepageSlug = $currentSlug;
+    }
 } else {
     $homepageSlug = $currentSlug;
 }
