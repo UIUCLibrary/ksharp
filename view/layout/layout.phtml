@@ -86,7 +86,7 @@ $userBar = $this->userBar();
         <nav>
             <?php
             echo $site->publicNav()->menu()->renderMenu(null, [
-                'maxDepth' => $this->themeSetting('nav_depth') - 1
+                'maxDepth' => intval($this->themeSetting('nav_depth')) - 1
             ]);
             ?>
         </nav>
