@@ -1,5 +1,5 @@
 #content {
-    padding: 0 (2 * gutter()) $spacing-l;
+    padding: 0 (2 * $spacing-l) $spacing-l;
 }
 
 table {
@@ -23,7 +23,7 @@ header {
 }
 
 header > * {
-    padding: 0 (2 * gutter());
+    padding: 0 (2 * $spacing-l);
 }
 
 header > h1 {
@@ -35,7 +35,7 @@ header > h1 {
 /* @group ----- Footer ----- */
 
 footer {
-    padding: 0 (2 * gutter()) $spacing-l;
+    padding: 0 (2 * $spacing-l) $spacing-l;
 }
 
 /* @end */
