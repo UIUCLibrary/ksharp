@@ -847,8 +847,11 @@ p, .main-content-container li {
 }
 
 .card-body {
-    background: #E8E9EB;
     border: 1px solid rgba(0,0,0,.125);
+}
+
+.card {
+    background: #E8E9EB !important;
 }
 
 .toc-card-header {
