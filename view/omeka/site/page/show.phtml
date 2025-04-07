@@ -46,8 +46,17 @@ $child_pages = $activeRoot['pages'];
 <?php endif; ?>
 
 <?php $this->trigger('view.show.before'); ?>
+<?php
+$width = 10;
+if ($this->themeSetting('container_size')=="xlg"){
+    $width+=2;
+}
+?>
+
     <div class="row">
 <?php if (!$this->themeSetting('side_nav') && $activePage && count($child_pages) != 0): ?>
+    #the side nave is 3 wide
+    <?php $width = 9; ?>
         <div class="col-md-3">
             <div class="table-of-contents-nav">
                 <?php if ($this->themeSetting('side_nav_title')): ?>
@@ -56,9 +65,9 @@ $child_pages = $activeRoot['pages'];
                 <?php printNav($activeRoot, $activePage['page']->toArray()); ?>
             </div>
         </div>
-        <div class="col-md-9">
-<?php else: ?>
-    <div class="col-md-9 offset-md-1-5">
+        <div class="col-md-<?php echo $width ?>">
+<?php else:?>
+    <div class="col-md-<?php echo $width ?>">
 <?php endif; ?>
             <div class="main-content-container">
                 <div class="blocks">
