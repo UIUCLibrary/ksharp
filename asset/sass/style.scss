@@ -1,6 +1,9 @@
 @import "normalize";
 @import "base";
+@media screen and (min-height: 576px){
+    @import "mobile";
 
+}
 @media screen {
     @import "screen";
 }
@@ -8,3 +11,8 @@
 @media screen and (min-width:768px) {
     @import "desktop";
 }
+
+@media screen and (min-width:992px){
+    @import "large";
+}
+

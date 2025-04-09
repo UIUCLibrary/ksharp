@@ -535,7 +535,7 @@ footer {
 
 #content {
     @include container;
-    padding: 0 gutter() $spacing-l;
+    padding: 0 ;
 }
 
 .resource-list.preview + a {
