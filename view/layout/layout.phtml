@@ -6,7 +6,6 @@ $this->headMeta()->setCharset('utf-8');
 $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1');
 $this->headTitle($siteTitle)->setSeparator(' · ');
 $this->headTitle()->append($this->setting('installation_title', 'Omeka S'));
-$this->headLink()->prependStylesheet($this->assetUrl('css/bootstrap.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/style.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
 $this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic,700');
@@ -14,6 +13,7 @@ $this->headScript()->prependFile($this->assetUrl('js/default.js'));
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
 //$this->headLink()->appendStylesheet('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+$this->headLink()->prependStylesheet($this->assetUrl('css/bootstrap.css'));
 $this->headScript()->prependFile('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js');
 $this->headScript()->prependFile('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js');
 
@@ -60,7 +60,6 @@ $userBar = $this->userBar();
 
 <?php echo $this->htmlElement('body'); ?>
     <a id="skipnav" href="#content"><?php echo $this->translate('Skip to main content'); ?></a>
-
 <?php echo $userBar; ?>
     <header>
         <?php if ($this->themeSetting('banner')): ?>
